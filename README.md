@@ -13,7 +13,7 @@ Este projeto faz parte de uma avaliação online na empresa ZRP e serve como pro
 
 
 #### Requisitos
-Apresentar um sistema montado com Flask que acessa uma API externa (Pokemons - https://pokeapi.co/api/v2/pokemon/nome_pokemon) e pegue os dados de resposta.
+Apresentar um sistema montado com Flask que acessa uma API externa (Pokemons - https://pokeapi.co/api/v2/pokemons/nome_pokemon) e pegue os dados de resposta.
 Com estes dados, filtre algumas informacoes de maneira que a resposta final seja semelhante a essa:
 
 *Usando o pokemon "ditto" como filtro de procura*

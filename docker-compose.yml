@@ -1,11 +1,15 @@
 version: "3.9"
 
 services:
-  uwsgi:                              # nome do servico
-    container_name: api_zrp           # nome do container quando iniciado
-    image: api_zrp:1.0                # tag da imagem criada
-    build:                            # sera construida uma imagem
-      context: .                      # o Dockerfile esta no mesmo diretorio deste arquivo
-    ports:    
-      - 80:80                         # fazer o BIND das portas (Dockerfile nao faz isso)
-
+  api_zrp:
+    container_name: api_zrp
+    image: api_zrp:1.0
+    network_mode: host
+    build:
+      context: .
+    environment:
+      - FLASK_ENV=Development
+      - FLASK_DEBUG=True
+      - FLASK_APP=./api_ZRP/app.py
+      - FLASK_RUN_PORT=8000
+      - URL_POKEMON=https://pokeapi.co/api/v2/pokemon/

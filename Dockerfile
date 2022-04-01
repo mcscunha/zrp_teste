@@ -13,8 +13,10 @@ WORKDIR /srv
 
 RUN apt-get clean \
     && apt-get -y update
+RUN apt-get -y install python3-dev \
+    && apt-get -y install build-essential
 RUN pip install -r requirements.txt --src /usr/local/src
 
-RUN cd /srv/api_ZRP
 
-CMD ["flask" "run"]
+
+CMD [ "python3", "-m" , "flask", "run", "--host=localhost", "--port=8000"]
