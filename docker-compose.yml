@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  uwsgi:                              # nome do servico
+    container_name: api_zrp           # nome do container quando iniciado
+    image: api_zrp:1.0                # tag da imagem criada
+    build:                            # sera construida uma imagem
+      context: .                      # o Dockerfile esta no mesmo diretorio deste arquivo
+    ports:    
+      - 80:80                         # fazer o BIND das portas (Dockerfile nao faz isso)
+
